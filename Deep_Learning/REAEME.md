@@ -1,6 +1,6 @@
 # Data Science: Deep Learning in Python
 
-** Review Outline: **
+**Review Outline:**
 
  
     
