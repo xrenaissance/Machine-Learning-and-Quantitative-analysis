@@ -1,8 +1,8 @@
 # Regression
 
-##Linear
+## Linear
 
-###Simple Linear Regression:
+### Simple Linear Regression:
 
 $$
 y = b_0 + b_1 * x_1
