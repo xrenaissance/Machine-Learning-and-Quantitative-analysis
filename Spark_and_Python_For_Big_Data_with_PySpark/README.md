@@ -4,16 +4,10 @@ Notebooks for Python and Spark for Big Data
 Review Outline:
 
 * Introduction
-    * Promo/Intro Video
-    * Course Curriculum Overview
     * Introduction to Spark, RDDs, and Spark 2.0
     
 * Set-up
-    * Set-up Overview
     * EC2 Installation Guide
-    * Local Installation Guide with VirtualBox
-    * Databricks Notebooks
-    * Unix Command Line Basics and Jupyter Notebook Overview
     
 * Spark DataFrames
     * Spark DataFrames Section Introduction
