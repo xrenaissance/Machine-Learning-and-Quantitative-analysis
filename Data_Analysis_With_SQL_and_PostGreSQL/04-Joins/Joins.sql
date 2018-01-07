@@ -63,7 +63,26 @@ FROM film
 LEFT OUTER JOIN inventory ON inventory.film_id = film.film_id;
 
 
+-- Find out all the movies not in the inventory
+SELECT film.film_id, film.title, inventory_id
+FROM film
+LEFT OUTER JOIN inventory ON inventory.film_id = film.film_id
+WHERE inventory.film_id IS NULL
+ORDER BY film.film_id;
 
+-- Produce same result
+SELECT film.film_id, film.title, inventory_id
+FROM film
+LEFT OUTER JOIN inventory ON inventory.film_id = film.film_id
+WHERE inventory_id IS NULL
+ORDER BY title;
+
+
+/**
+* UNION
+*
+* The UNION operator removes all duplicate rows unless the UNION ALL is used
+**/
 
 
 
