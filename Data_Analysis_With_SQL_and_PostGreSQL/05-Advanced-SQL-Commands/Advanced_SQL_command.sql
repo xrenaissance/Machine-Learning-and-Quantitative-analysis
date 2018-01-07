@@ -26,3 +26,25 @@ SELECT first_name ||' '|| last_name AS full_name FROM customer;
 SELECT first_name, char_length(first_name) FROM customer;
 
 -- Subquery
+/**
+* Find the films whose rental rate is higher than the average rental rate
+*
+* 1. find the average rental rate by using the SELECT statement and average function AVG
+* 2. Use the result of the first query in the second SELECT statement to find the films that we want
+**/
+
+SELECT title, rental_rate 
+FROM film
+WHERE rental_rate > (SELECT AVG(rental_rate) FROM film);
+
+
+
+select * from rental;
+select * from inventory limit 1;
+
+
+
+
+
+
+
