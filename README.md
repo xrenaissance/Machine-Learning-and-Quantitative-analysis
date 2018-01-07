@@ -2,4 +2,4 @@
 - Python For Financial and Algorithmic trading
 -- All python releated knowledge points
 - Data Visualization
-- Neural Network Learning(Mainly Deep learning)
+- Deep Learning(DNN, CNN, LSTM, etc, played with tensorflow)
