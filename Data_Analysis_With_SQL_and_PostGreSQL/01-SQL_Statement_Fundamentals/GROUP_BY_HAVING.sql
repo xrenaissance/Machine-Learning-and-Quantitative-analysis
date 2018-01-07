@@ -71,6 +71,80 @@ ORDER BY SUM(amount);
 **/
 SELECT * FROM film;
 
+SELECT rating, ROUND(AVG(replacement_cost),2) AS AVG_Replacement
+FROM film
+GROUP BY rating
+ORDER BY AVG(replacement_cost);
+
+
+/**
+* We want to send coupons to the 5 customers who have spent the 
+* most amout of money.
+* Get me the customer ids of the top 5 spenders.
+**/
+
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+limit 5;
+
+
+-------------- GROUP BY WITH HAVING CLAUSE -------------------
+/**
+* SELECT column_1, aggregate_function(column_2)
+* FROM table_name
+* GROUP BY column_1
+* HAVING condition;
+**/
+
+-- ONLY SELECT customer who spent more than $200
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+HAVING SUM(amount) > 200;
+
+
+-- Which store has more than 300 customer
+SELECT store_id, COUNT(customer_id)
+FROM customer
+GROUP BY store_id
+HAVING COUNT(customer_id) > 300;
+
+
+-- ONLY look at rating in (R, G, PG)
+SELECT rating, AVG(rental_rate)
+FROM film
+WHERE rating IN ('R', 'G', 'PG')
+GROUP BY rating
+HAVING AVG(rental_rate) < 3;
+
+
+/**
+* We want to know hwat customers are eligible for
+* our platinum credit card. The requirements are that 
+* the customer that has at least a total of 40 transaction
+* payments.
+*
+* What customer (by customer_id) ar eeligible for the credit card?
+**/
+
+SELECT customer_id, COUNT(payment_id)
+FROM payment
+GROUP BY customer_id
+HAVING COUNT(payment_id) > 40
+ORDER BY COUNT(payment_id) DESC;
+
+/**
+* When grouped by rating, what movie ratings
+* have an average rental duration of more than
+* 5 days?
+**/
+SELECT * FROM film;
+SELECT rating, AVG(rental_duration)
+FROM film
+GROUP BY rating
+HAVING AVG(rental_duration) > 5;
 
 
 
